@@ -4,7 +4,7 @@ from setuptools import setup
 from setuptools import find_packages
 
 setup(
-    name='blueprint-webapp-flask',
+    name='OnzeDeLegende',
     version='1.0.0',
     packages=find_packages(exclude=["*_tests"]),
     license='MIT',
@@ -12,7 +12,8 @@ setup(
     install_requires = [
       'flask',
       'requests',
-      'bs4'
+      'bs4',
+      'honcho'
     ],
     extras_require={
         'dev': [

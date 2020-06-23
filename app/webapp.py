@@ -1,17 +1,26 @@
 # pylint: disable=invalid-name
 
-from flask import Flask
-from flask import render_template
-
+from flask import Flask, request, render_template
+from app.utils import Application
 
 app = Flask(__name__)
 
 
 @app.route("/")
-def hello():
-    name = 'Fabien'
-    return render_template('hello.html', name=name)
+def home():
+    return render_template('home.html')
 
+@app.route("/refresh")
+def refresh():
+    app = Application()
+    app.refresh()
+    return render_template('refresh.html')
+
+@app.route("/team", methods=['POST'])
+def team():
+    app = Application()
+    result = app.team(request.form.to_dict(flat=True))
+    return render_template('team.html', result=result)
 
 if __name__ == "__main__":
     app.run()

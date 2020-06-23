@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>Home | OnzeDeLégende</title>
+        <style>
+            html {
+                background: url(https://s1.1zoom.me/big3/943/Footbal_Evening_Stadium_Lawn_Rays_of_light_564319_4200x2800.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+            }
+            body {
+                width: 500px;
+                text-align: center;
+                margin: 50px auto 0;
+            }
+            h1{
+                font-size: 1.9em;
+            }
+            h1, h3 , a{
+                color: #fff;
+            }
+            input {
+                width: 480px;
+                margin: 10px 0;
+            }
+            form {
+                text-align: end;
+                margin-top: 5em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Bienvenue au Onze De Légende !</h1>
+        <h3>Laissez nous faire votre équipe parfaite</h3>
+        <form action="/team" method="POST">
+            <input name="budget" type="number" placeholder="Quelle est votre budget ? (ex : 100)" value="100" /> 
+            <input name="star_player_max" type="number" placeholder="Nombre max. de Stars ? (ex : 3)" value="3"/>
+            <input name="goalkeeper" type="number" placeholder="Nombre max. de Goal ? (ex : 2)" value="2"/>
+            <input name="defender" type="number" placeholder="Nombre max. de Défendeurs ? (ex : 5)" value="5"/>
+            <input name="middle" type="number" placeholder="Nombre max. de Milieux ? (ex : 5)" value="5"/>
+            <input name="forward" type="number" placeholder="Nombre max. d'Attaquants ? (ex : 3)" value="3"/>
+            <button>C'est partis !</button>
+        </form>
+        <hr>
+        <a href="/refresh">Actualiser</a>
+    </body>
+</html>
