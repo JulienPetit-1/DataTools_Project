@@ -1,12 +1,8 @@
 [![Build Status](https://travis-ci.org/FabienArcellier/blueprint-webapp-flask.svg?branch=master)](https://travis-ci.org/FabienArcellier/blueprint-webapp-flask)
 
-## Motivation
+# Onze de légende
 
-blueprint to implement a flask application. This application may be used to:
-
-* build MVC application as multipage web application
-* build API application
-* ...
+Application which makes it possible to compose the best current football team.
 
 ## Getting started
 
@@ -16,30 +12,27 @@ The following requirements has to be setup on your host before running the comma
 from this repository.
 
 * `python 3.6` at least
-* [pipenv](https://pipenv.pypa.io/en/latest/)
-
-### Install the python dependencies
-
-```bash
-make install_requirements_dev
-make start
-```
 
 ## The latest version
 
 You can find the latest version to ...
 
 ```bash
-git clone git@github.com:FabienArcellier/blueprint-webapp-flask.git
+git clone git@github.com:JulienPetit-1/DataTools_Project.git
 ```
 
 ## Usage
 
-You can run the application with the following command
+You can access to our website with the following url :
+(Insérer URL)
 
-```python
-make start
-```
+On this website, you can choose several parameters to display your dream team : 
+* Your budget 
+* The maximum number of football's stars in your team
+* The maximum number of goalkeepers in your team
+* The maximum number of defenders in your team
+* The maximum number of middlekeepers in your team
+* The maximum number of attackers in your team
 
 ## Contributing
 
@@ -50,24 +43,6 @@ python dependencies.
 
 ```bash
 make install_requirements_dev
-```
-
-### Freeze the library requirements
-
-If you want to freeze all the packages, use
-this procedure
-
-```bash
-make freeze_requirements
-```
-
-### Activate the python environment
-
-When you setup the requirements, a `venv3` directory on python 3 is created.
-To activate the venv, you have to execute /
-
-```bash
-make activate
 ```
 
 ### Run the linter and the unit tests
@@ -82,8 +57,6 @@ make tests
 
 ## Contributors
 
-* Fabien Arcellier
-
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
+* Rodolphe MATHIEU
+* Raphaël PORTELL
+* Julien PETIT
