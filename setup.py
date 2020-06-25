@@ -13,7 +13,9 @@ setup(
       'flask',
       'requests',
       'bs4',
-      'honcho'
+      'honcho',
+      'pandas',
+      'selenium'
     ],
     extras_require={
         'dev': [

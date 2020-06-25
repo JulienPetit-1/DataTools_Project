@@ -5,11 +5,10 @@ from app.scrapping import Scrapping
 
 class Application:
 
-    self.Players = pd.read_csv(os.path.join(os.path.abspath(__file__), "saves", "players.csv")))
+    Players = pd.read_csv(os.path.join(os.path.abspath(os.path.dirname(__file__)), "saves", "players.csv"))
 
     def team(self, parameters):
-        return parameters
-        core = Core(self.players)
+        core = Core(self.Players)
         return core.get_money_team_objects()
     
     def refresh(self):

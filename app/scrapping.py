@@ -8,30 +8,6 @@ import time
 
 class Scrapping:
 
-    URL_PLAYER_BASE = 'https://int.soccerway.com'
-    URL_PLAYER_LISTE = 'https://int.soccerway.com/players/topscorers/'
-
-    req = Request('https://int.soccerway.com/players/topscorers/?fbclid=IwAR2ZURTxrsbgAnS71VFeDS8KBwF73P5VeTdkg--vqoG_aj0dJxO5dQq_wmY', headers={'User-Agent': 'Mozilla/5.0'})
-    webpage = urlopen(req).read()
-    soup = BeautifulSoup(webpage, 'html.parser')
-
-    def get_html_from_link(page_link):
-        '''
-            Get HTML from web page and parse it.
-
-            :param page_link: link of the webpage we want to scrap
-            :type page_link: string
-            :return: BeautifulSoup object (HTML parsed)
-            :rtype: bs4.BeautifulSoup
-        '''
-
-        # Make a GET request to fetch the raw HTML content
-        html_content = requests.get(page_link).text
-
-        # Parse the html content
-        soup = BeautifulSoup(html_content, "lxml")
-        return soup
-
     def get_links_to_players(root_html):
         '''
             Extract players links from URL_PLAYER_LISTE
@@ -50,7 +26,6 @@ class Scrapping:
                 players_links = list(set(players_links))
         return players_links
 
-    players_links = 
 
     def extract_player_info(player_html):
         '''
@@ -93,13 +68,17 @@ class Scrapping:
 
 
     def add_players_list(self):
+        req = Request('https://int.soccerway.com/players/topscorers/', headers={'User-Agent': 'Mozilla/5.0'})
+        webpage = urlopen(req).read()
+        soup = BeautifulSoup(webpage, 'html.parser')
         player_list = self.get_links_to_players(soup)
+
         links = [ player_list[0], 'https://int.soccerway.com/players/transfers/' ]
         for link in links:
             players = []
             for link in self.get_links_to_players(soup):
                 try:
-                    new_link= URL_PLAYER_BASE + link
+                    new_link= 'https://int.soccerway.com' + link
                     req = Request(new_link, headers={'User-Agent': 'Mozilla/5.0'})
                     webpage = urlopen(req).read()
                     soup = BeautifulSoup(webpage, 'html.parser')
@@ -111,5 +90,6 @@ class Scrapping:
 
         return players
     
-
-    df = pd.DataFrame(data=list(set(players)), columns = ['Name', 'Club', 'Cost', 'Position', 'Goals', 'Minutes played', 'Matchs', 'Red Cards', 'ROI'])
+    def __init__(self):
+        players = self.add_players_list()
+        return pd.DataFrame(data=list(set(players)), columns = ['Name', 'Club', 'Cost', 'Position', 'Goals', 'Minutes played', 'Matchs', 'Red Cards', 'ROI'])
