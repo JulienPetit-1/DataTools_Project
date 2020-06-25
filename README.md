@@ -79,6 +79,7 @@ Images and data come from a logistic football website.
 [Visual Stucio Code](https://code.visualstudio.com/) - Html/css 
 
 [Python 3.8](https://www.python.org/) - Backend
+                                      - Scraping
 
 
 ## Contributing
@@ -87,6 +88,6 @@ Please read CONTRIBUTING.md for details on our code of conduct, and the process 
 
 ## Contributors
 
-* Rodolphe MATHIEU
-* Raphaël PORTELL
-* Julien PETIT
+* **Rodolphe MATHIEU**
+* **Raphaël PORTELL**
+* **Julien PETIT**
