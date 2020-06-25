@@ -25,18 +25,19 @@ git clone git@github.com:JulienPetit-1/DataTools_Project.git
 
 ## Usage
 
->You can access to our website with the following url :
+You can access to our website with the following url :
 (Insérer URL)
 
->On this website, you can find dataframes with players and clubs from the lastest football season. 
+On this website, you can find dataframes with players and clubs from the lastest football season. 
 The dataframe is composed as follows : 
 
 | Name | Club | Cost | Position | Goals | Minutes played | Matchs | Redcard | ROI |
-| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |------|
-| player1 | club1 | x M€ | position1 | x | x | x | x | x |
-ROI stands for Return On Investment
+| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |:------:|
+| player1 | club1 | M€ | position1 | x | x | x | x | x |
 
->Check below the caracteristics that you can choose on the home page in order to find the good football team you want :
+>ROI stands for Return On Investment
+
+Check below the caracteristics that you can choose on the home page in order to find the good football team you want :
 
 * Your budget 
 * The maximum number of football's stars in your team
@@ -45,7 +46,7 @@ ROI stands for Return On Investment
 * The maximum number of middlekeepers in your team
 * The maximum number of attackers in your team
 
->You will find on the desktop-hd screen a field with the 11 best players of the moment.
+You will find on the desktop-hd screen a field with the 11 best players of the moment.
 
 ## Contributing
 
