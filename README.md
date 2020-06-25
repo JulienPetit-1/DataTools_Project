@@ -32,6 +32,7 @@ git clone git@github.com:JulienPetit-1/DataTools_Project.git
 The dataframe is composed as follows : 
 
 | Name | Club | Cost | Position | Goals | Minutes played | Matchs | Redcard | ROI |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |------|
 | player1 | club1 | x M€ | position1 | x | x | x | x | x |
 ROI stands for Return On Investment
 
