@@ -1,0 +1,689 @@
+
+
+/* .anima-animate-appear prefix for appear animations */
+.anima-animate-appear {
+  opacity             : 0;
+  display             : block;
+  animation           : anima-reveal 0.3s ease-in-out 1 normal forwards;
+}
+.anima-animate-disappear {
+  opacity             : 1;
+  display             : block;
+  animation           : anima-reveal 0.3s ease-in-out 1 reverse forwards;
+}
+.anima-animate-nodelay {
+  animation-delay     : 0s;
+}
+@keyframes anima-reveal {
+  from {
+    opacity             : 0;
+  }
+  to {
+    opacity             : 1;
+  }
+}
+* {
+  box-sizing          : border-box;
+}
+.anima-component-wrapper,
+.anima-component-wrapper * {
+  pointer-events      : none;
+}
+.anima-component-wrapper a *,
+.anima-component-wrapper a,
+.anima-component-wrapper input,
+.anima-component-wrapper video,
+.anima-component-wrapper iframe,
+.anima-listeners-active,
+.anima-listeners-active * {
+  pointer-events      : auto;
+}
+.anima-hidden,
+.anima-hidden * {
+  visibility          : hidden;
+  pointer-events      : none;
+}
+.anima-smart-layers-pointers,
+.anima-smart-layers-pointers * {
+  pointer-events      : auto;
+  visibility          : visible;
+}
+.anima-component-wrapper.anima-not-ready,
+.anima-component-wrapper.anima-not-ready * {
+  visibility          : hidden !important;
+}
+.anima-listeners-active-click,
+.anima-listeners-active-click * {
+  cursor              : pointer;
+}
+.anima-component-wrapper a,
+.anima-screen a {
+  text-decoration     : none;
+}
+.anima-flexbox-container a {
+  line-height         : 0;
+}
+.anima-full-width-a {
+  width               : 100%;
+}
+.anima-full-height-a {
+  height              : 100%;
+}
+.anima-screen textarea:focus,
+.anima-screen input:focus {
+  outline             : none;
+}
+.anima-screen div {
+  -webkit-text-size-adjust: none;
+}
+.anima-container-center-vertical,
+.anima-container-center-horizontal {
+  pointer-events      : none;
+  display             : flex;
+  flex-direction      : row;
+  padding             : 0;
+  margin              : 0;
+}
+.anima-container-center-vertical {
+  align-items         : center;
+  height              : 100%;
+}
+.anima-container-center-horizontal {
+  justify-content     : center;
+  width               : 100%;
+}
+.anima-container-center-vertical > *,
+.anima-container-center-horizontal > * {
+  pointer-events      : auto;
+  flex-shrink         : 0;
+}
+.anima-component-wrapper ,
+.anima-screen {
+  overflow-wrap       : break-word;
+  word-wrap           : break-word;
+  word-break          : break-all;
+  word-break          : break-word;
+}
+.anima-auto-animated div {
+  opacity             : 0;
+  position            : absolute;
+  --anima-z-index: -1;
+}
+/* ANIMA screen - desktopdefense */
+.font-class-1 {
+  font-family         : "Helvetica", Helvetica, Arial, serif;
+}
+:root {
+  --auto-palette-color-1: rgba(0,0,0,1.0);
+  --auto-palette-color-2: rgba(255,255,255,1.0);
+  --auto-palette-color-3: rgba(28,3,3,1.0);
+  --auto-palette-color-4: rgba(150,150,150,1.0);
+  --auto-palette-color-5: rgba(221,175,48,1.0);
+  --auto-palette-color-6: rgba(231,200,200,1.0);
+  --auto-palette-color-7: rgba(229,220,220,1.0);
+}
+.desktopdefense .overlap-group1-ZQId4F {
+  background-color    : rgba(255,255,255,0);
+  flex-shrink         : 0;
+  height              : 653px;
+  margin-top          : 0px;
+  position            : relative;
+  width               : 580px;
+}
+.desktopdefense .overlap-group2-QpOFAk {
+  align-self          : center;
+  background-color    : rgba(255,255,255,0);
+  flex-shrink         : 0;
+  height              : 66px;
+  margin-right        : 53.0px;
+  position            : relative;
+  width               : 270px;
+}
+.desktopdefense .overlap-group3-F1K31c {
+  background-color    : rgba(255,255,255,0);
+  flex-shrink         : 0;
+  height              : 579px;
+  margin-top          : 60.0px;
+  position            : relative;
+  width               : 460px;
+}
+.desktopdefense .auto-flex-NJ62Do {
+  align-items         : flex-start;
+  background-color    : rgba(255,255,255,0);
+  box-sizing          : border-box;
+  display             : flex;
+  flex-direction      : column;
+  flex-shrink         : 0;
+  height              : auto;
+  justify-content     : flex-start;
+  margin-left         : 97px;
+  position            : relative;
+  width               : 781px;
+}
+.desktopdefense .auto-flex1-t5q8Pb {
+  align-items         : flex-start;
+  background-color    : rgba(255,255,255,0);
+  box-sizing          : border-box;
+  display             : inline-flex;
+  flex-direction      : row;
+  flex-shrink         : 0;
+  height              : 825px;
+  justify-content     : flex-start;
+  margin-right        : -2.0px;
+  margin-top          : 54px;
+  position            : relative;
+  width               : auto;
+}
+.desktopdefense .overlap-group-Y7zamN {
+  background-color    : rgba(255,255,255,0);
+  flex-shrink         : 0;
+  height              : 145px;
+  position            : relative;
+  width               : 1440px;
+}
+.desktopdefense .a53298-HWn0x7 {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 324px;
+  position            : absolute;
+  top                 : 226px;
+  transform           : rotate(0deg);
+  width               : 52px;
+}
+.desktopdefense .shape-etziUq {
+  background-color    : rgba(255,255,255,0);
+  height              : 7px;
+  left                : 34px;
+  position            : absolute;
+  top                 : 50px;
+  transform           : rotate(0deg);
+  width               : 9px;
+}
+.desktopdefense .shape-hAhmxO {
+  background-color    : rgba(255,255,255,0);
+  height              : 31px;
+  left                : 0px;
+  position            : absolute;
+  top                 : 35px;
+  transform           : rotate(0deg);
+  width               : 52px;
+}
+.desktopdefense .path-dqPC48 {
+  background-color    : rgba(255,255,255,0);
+  height              : 42px;
+  left                : 12px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(0deg);
+  width               : 28px;
+}
+.desktopdefense .path-Iy3xy0 {
+  background-color    : rgba(255,255,255,0);
+  height              : 11px;
+  left                : 15px;
+  position            : absolute;
+  top                 : 34px;
+  transform           : rotate(0deg);
+  width               : 10px;
+}
+.desktopdefense .path-d3Y47K {
+  background-color    : rgba(255,255,255,0);
+  height              : 20px;
+  left                : 25px;
+  position            : absolute;
+  top                 : 34px;
+  transform           : rotate(0deg);
+  width               : 13px;
+}
+.desktopdefense .a53298-tX9Q6B {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 194px;
+  position            : absolute;
+  top                 : 226px;
+  transform           : rotate(0deg);
+  width               : 52px;
+}
+.desktopdefense .shape-x1ccQG {
+  background-color    : rgba(255,255,255,0);
+  height              : 7px;
+  left                : 34px;
+  position            : absolute;
+  top                 : 50px;
+  transform           : rotate(0deg);
+  width               : 9px;
+}
+.desktopdefense .shape-XkZrRy {
+  background-color    : rgba(255,255,255,0);
+  height              : 31px;
+  left                : 0px;
+  position            : absolute;
+  top                 : 35px;
+  transform           : rotate(0deg);
+  width               : 52px;
+}
+.desktopdefense .path-4LPH9f {
+  background-color    : rgba(255,255,255,0);
+  height              : 42px;
+  left                : 12px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(0deg);
+  width               : 28px;
+}
+.desktopdefense .path-1BDiVH {
+  background-color    : rgba(255,255,255,0);
+  height              : 11px;
+  left                : 15px;
+  position            : absolute;
+  top                 : 34px;
+  transform           : rotate(0deg);
+  width               : 10px;
+}
+.desktopdefense .path-CotmzS {
+  background-color    : rgba(255,255,255,0);
+  height              : 20px;
+  left                : 25px;
+  position            : absolute;
+  top                 : 34px;
+  transform           : rotate(0deg);
+  width               : 13px;
+}
+.desktopdefense .a53298-1VWUwA {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 264px;
+  position            : absolute;
+  top                 : 283px;
+  transform           : rotate(0deg);
+  width               : 52px;
+}
+.desktopdefense .shape-AluAFx {
+  background-color    : rgba(255,255,255,0);
+  height              : 7px;
+  left                : 34px;
+  position            : absolute;
+  top                 : 50px;
+  transform           : rotate(0deg);
+  width               : 9px;
+}
+.desktopdefense .shape-00JvIO {
+  background-color    : rgba(255,255,255,0);
+  height              : 31px;
+  left                : 0px;
+  position            : absolute;
+  top                 : 35px;
+  transform           : rotate(0deg);
+  width               : 52px;
+}
+.desktopdefense .path-Zr5aWT {
+  background-color    : rgba(255,255,255,0);
+  height              : 42px;
+  left                : 12px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(0deg);
+  width               : 28px;
+}
+.desktopdefense .path-tIjRxJ {
+  background-color    : rgba(255,255,255,0);
+  height              : 11px;
+  left                : 15px;
+  position            : absolute;
+  top                 : 34px;
+  transform           : rotate(0deg);
+  width               : 10px;
+}
+.desktopdefense .path-RAvkUb {
+  background-color    : rgba(255,255,255,0);
+  height              : 20px;
+  left                : 25px;
+  position            : absolute;
+  top                 : 34px;
+  transform           : rotate(0deg);
+  width               : 13px;
+}
+.desktopdefense .foot-b8RVlp {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 204px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(0deg);
+  width               : 66px;
+}
+.desktopdefense .foot-xxCMGa {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 0px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(0deg);
+  width               : 66px;
+}
+.desktopdefense .foot-V9xxTD {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 51px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(0deg);
+  width               : 66px;
+}
+.desktopdefense .foot-b9Syxp {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 102px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(0deg);
+  width               : 66px;
+}
+.desktopdefense .foot-QWkQ2W {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 153px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(0deg);
+  width               : 66px;
+}
+.desktopdefense .rectangle-IelYsm {
+  background-color    : rgba(255,255,255,0);
+  height              : 576px;
+  left                : 0px;
+  position            : absolute;
+  top                 : 3px;
+  transform           : rotate(0deg);
+  width               : 460px;
+}
+.desktopdefense .a53254-opSZ2H {
+  background-color    : rgba(255,255,255,0);
+  height              : 183px;
+  left                : 139px;
+  position            : absolute;
+  top                 : 103px;
+  transform           : rotate(0deg);
+  width               : 183px;
+}
+.desktopdefense .club-u2014-poste-u2014-n-xxrFwL {
+  background-color    : rgba(255,255,255,0);
+  color               : var(--auto-palette-color-3);
+  font-size           : 25.0px;
+  height              : auto;
+  left                : 19px;
+  line-height         : 30.0px;
+  position            : absolute;
+  text-align          : left;
+  top                 : 314px;
+  transform           : rotate(0deg);
+  width               : 414px;
+}
+.desktopdefense .combined-shape-fld4uW {
+  background-color    : rgba(255,255,255,0);
+  height              : 82px;
+  left                : 0px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(180deg);
+  width               : 460px;
+}
+.desktopdefense .nom-du-joueur-6vfWzn {
+  background-color    : rgba(255,255,255,0);
+  color               : var(--auto-palette-color-6);
+  font-size           : 39.0px;
+  height              : auto;
+  left                : 86px;
+  line-height         : 47.0px;
+  position            : absolute;
+  text-align          : left;
+  top                 : 8px;
+  transform           : rotate(0deg);
+  width               : 290px;
+}
+.desktopdefense {
+  align-items         : flex-end;
+  background-color    : var(--auto-palette-color-2);
+  box-sizing          : border-box;
+  display             : flex;
+  flex-direction      : column;
+  height              : auto;
+  justify-content     : flex-start;
+  min-height          : 1024px;
+  overflow            : hidden;
+  position            : relative;
+  width               : 1440.0px;
+}
+.desktopdefense .rectangle-p6bHfG {
+  background-color    : var(--auto-palette-color-1);
+  border-color        : var(--auto-palette-color-4);
+  border-style        : solid;
+  border-width        : 1.0px;
+  height              : 142px;
+  left                : 0px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(0deg);
+  width               : 1440px;
+}
+.desktopdefense .data-science-tools-IGLq0f {
+  background-color    : rgba(255,255,255,0);
+  color               : var(--auto-palette-color-2);
+  font-size           : 21.0px;
+  height              : auto;
+  left                : 1252px;
+  line-height         : 25.0px;
+  position            : absolute;
+  text-align          : left;
+  top                 : 114px;
+  transform           : rotate(0deg);
+  width               : 185px;
+}
+.desktopdefense .onze-de-l-351gende-N75xn7 {
+  background-color    : rgba(255,255,255,0);
+  color               : var(--auto-palette-color-5);
+  font-size           : 54.0px;
+  height              : auto;
+  left                : 23px;
+  line-height         : 65.0px;
+  position            : absolute;
+  text-align          : left;
+  top                 : 38px;
+  transform           : rotate(0deg);
+  width               : 462px;
+}
+.desktopdefense .a2512020-julien-petit-xsjIZd {
+  align-self          : flex-end;
+  background-color    : rgba(255,255,255,0);
+  color               : var(--auto-palette-color-1);
+  flex-shrink         : 0;
+  font-size           : 14.0px;
+  height              : auto;
+  line-height         : 17.0px;
+  margin-top          : 84px;
+  min-height          : 22px;
+  position            : relative;
+  text-align          : left;
+  transform           : rotate(0deg);
+  width               : 401px;
+}
+.desktopdefense .a105573758-1582949925218903-5626594150498664147-n-5CDBxc {
+  background-color    : rgba(255,255,255,0);
+  height              : 653px;
+  left                : 0px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(0deg);
+  width               : 580px;
+}
+.desktopdefense .a53254-Xv9CTP {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 425px;
+  position            : absolute;
+  top                 : 380px;
+  transform           : rotate(0deg);
+  width               : 66px;
+}
+.desktopdefense .a53254-oNuwQS {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 310px;
+  position            : absolute;
+  top                 : 402px;
+  transform           : rotate(0deg);
+  width               : 66px;
+}
+.desktopdefense .a53254-Ye8zlK {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 204px;
+  position            : absolute;
+  top                 : 402px;
+  transform           : rotate(0deg);
+  width               : 66px;
+}
+.desktopdefense .a53254-ShvBTU {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 89px;
+  position            : absolute;
+  top                 : 380px;
+  transform           : rotate(0deg);
+  width               : 66px;
+}
+.desktopdefense .a53212-lhuINd {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 373px;
+  position            : absolute;
+  top                 : 117px;
+  transform           : rotate(0deg);
+  width               : 52px;
+}
+.desktopdefense .shape-ysthlO {
+  background-color    : rgba(255,255,255,0);
+  height              : 34px;
+  left                : 0px;
+  position            : absolute;
+  top                 : 32px;
+  transform           : rotate(0deg);
+  width               : 52px;
+}
+.desktopdefense .shape-gCNxEZ {
+  background-color    : rgba(255,255,255,0);
+  height              : 8px;
+  left                : 30px;
+  position            : absolute;
+  top                 : 46px;
+  transform           : rotate(0deg);
+  width               : 10px;
+}
+.desktopdefense .path-GdOxJu {
+  background-color    : rgba(255,255,255,0);
+  height              : 40px;
+  left                : 12px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(0deg);
+  width               : 29px;
+}
+.desktopdefense .a53212-pNe6mP {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 152px;
+  position            : absolute;
+  top                 : 117px;
+  transform           : rotate(0deg);
+  width               : 52px;
+}
+.desktopdefense .shape-SftQTa {
+  background-color    : rgba(255,255,255,0);
+  height              : 34px;
+  left                : 0px;
+  position            : absolute;
+  top                 : 32px;
+  transform           : rotate(0deg);
+  width               : 52px;
+}
+.desktopdefense .shape-wK6OKx {
+  background-color    : rgba(255,255,255,0);
+  height              : 8px;
+  left                : 30px;
+  position            : absolute;
+  top                 : 46px;
+  transform           : rotate(0deg);
+  width               : 10px;
+}
+.desktopdefense .path-WTvjNi {
+  background-color    : rgba(255,255,255,0);
+  height              : 40px;
+  left                : 12px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(0deg);
+  width               : 29px;
+}
+.desktopdefense .a53212-h9gjuv {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 264px;
+  position            : absolute;
+  top                 : 84px;
+  transform           : rotate(0deg);
+  width               : 52px;
+}
+.desktopdefense .shape-hKhoMO {
+  background-color    : rgba(255,255,255,0);
+  height              : 34px;
+  left                : 0px;
+  position            : absolute;
+  top                 : 32px;
+  transform           : rotate(0deg);
+  width               : 52px;
+}
+.desktopdefense .shape-yT1Fmn {
+  background-color    : rgba(255,255,255,0);
+  height              : 8px;
+  left                : 30px;
+  position            : absolute;
+  top                 : 46px;
+  transform           : rotate(0deg);
+  width               : 10px;
+}
+.desktopdefense .path-hxihXI {
+  background-color    : rgba(255,255,255,0);
+  height              : 40px;
+  left                : 12px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(0deg);
+  width               : 29px;
+}
+.desktopdefense .a53210-jScnw0 {
+  background-color    : rgba(255,255,255,0);
+  height              : 66px;
+  left                : 264px;
+  position            : absolute;
+  top                 : 510px;
+  transform           : rotate(0deg);
+  width               : 52px;
+}
+.desktopdefense .path-YvW8pr {
+  background-color    : rgba(255,255,255,0);
+  height              : 38px;
+  left                : 0px;
+  position            : absolute;
+  top                 : 28px;
+  transform           : rotate(0deg);
+  width               : 52px;
+}
+.desktopdefense .path-dZfI6u {
+  background-color    : rgba(255,255,255,0);
+  height              : 38px;
+  left                : 12px;
+  position            : absolute;
+  top                 : 0px;
+  transform           : rotate(0deg);
+  width               : 28px;
+}
