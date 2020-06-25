@@ -1,20 +1,23 @@
+import pandas as pd
+
 class Core:
 
+    def __init__(self, players, teams):
+        self.Players = players
+        self.Teams = teams
+
     def roi_top_players(self):
-        return db.session.query(Player).order_by(Player.roi.desc()).all()
+        return self.Players.sort_values(by=['ROI'], ascending=False)
 
     def roi_bottom_players(self):
-        return db.session.query(Player).order_by(Player.roi).all()
+        return self.Players.sort_values(by=['ROI'], ascending=True)
 
     def average__player_roi(self):
-        return round(float(db.session.query(func.avg(Player.roi)).first()[0]), 2)
+        return round(float(self.Players['ROI'].mean(), 2))
 
     def points_top_players(self):
-        return db.session.query(Player).order_by(Player.total_points.desc()).all()
-
-    def bonus_top_players(self):
-        return db.session.query(Player).order_by(Player.bonus.desc()).all()
-
+        return self.Players.sort_values(by=['total_points'], ascending=False)
+        
     def players_by_status(self, status):
         return db.session.query(Player).filter(Player.status == status).all()
 
@@ -25,10 +28,10 @@ class Core:
         return db.session.query(Player).filter(Player.position == position).order_by(Player.total_points.desc())[:number]
 
     def team_list(self):
-        return db.session.query(Team).all()
+        return self.Teams
 
     def player_list(self):
-        return db.session.query(Player).all()
+        return self.Players
 
     def get_money_team_objects(self, budget = 100, count_limit = 2, gk = 2, df = 5, md = 5, fwd = 3):
         money_team = []
@@ -107,5 +110,5 @@ class Core:
     def money_team_table(self):
         keys = Player.__table__.columns.keys()
         headers = [keys[3], 'team', keys[4],keys[5], 'points', keys[8], keys[10], 'ROI']
-        rows = [[item.name, item.team.name, item.position, item.cost, item.total_points, item.bonus, item.minutes, item.roi] for item in get_money_team_objects()]
+        rows = [[item.name, item.team.name, item.position, item.cost, item.total_points, item.minutes, item.roi] for item in get_money_team_objects()]
         return [headers, rows]
