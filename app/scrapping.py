@@ -8,11 +8,12 @@ import time
 
 class Scrapping:
 
-    def run(self):
-        print("Scrapping")
-
     URL_PLAYER_BASE = 'https://int.soccerway.com'
     URL_PLAYER_LISTE = 'https://int.soccerway.com/players/topscorers/'
+
+    req = Request('https://int.soccerway.com/players/topscorers/?fbclid=IwAR2ZURTxrsbgAnS71VFeDS8KBwF73P5VeTdkg--vqoG_aj0dJxO5dQq_wmY', headers={'User-Agent': 'Mozilla/5.0'})
+    webpage = urlopen(req).read()
+    soup = BeautifulSoup(webpage, 'html.parser')
 
     def get_html_from_link(page_link):
         '''
@@ -30,14 +31,6 @@ class Scrapping:
         # Parse the html content
         soup = BeautifulSoup(html_content, "lxml")
         return soup
-
-
-
-    from urllib.request import Request, urlopen
-
-    req = Request('https://int.soccerway.com/players/topscorers/?fbclid=IwAR2ZURTxrsbgAnS71VFeDS8KBwF73P5VeTdkg--vqoG_aj0dJxO5dQq_wmY', headers={'User-Agent': 'Mozilla/5.0'})
-    webpage = urlopen(req).read()
-    soup = BeautifulSoup(webpage, 'html.parser')
 
     def get_links_to_players(root_html):
         '''
@@ -57,9 +50,7 @@ class Scrapping:
                 players_links = list(set(players_links))
         return players_links
 
-
-    html = get_html_from_link(URL_PLAYER_LISTE)
-    players_links = get_links_to_players(soup)
+    players_links = 
 
     def extract_player_info(player_html):
         '''
@@ -101,54 +92,24 @@ class Scrapping:
         return player_name, player_club, player_cost, player_role, player_goals, player_time, player_match, player_red_cards, player_ROI
 
 
-    link = URL_PLAYER_BASE + players_links[0]
-    req = Request(link, headers={'User-Agent': 'Mozilla/5.0'})
-    webpage = urlopen(req).read()
-    soup = BeautifulSoup(webpage, 'html.parser')
-    extract_player_info(soup)
+    def add_players_list(self):
+        player_list = self.get_links_to_players(soup)
+        links = [ player_list[0], 'https://int.soccerway.com/players/transfers/' ]
+        for link in links:
+            players = []
+            for link in self.get_links_to_players(soup):
+                try:
+                    new_link= URL_PLAYER_BASE + link
+                    req = Request(new_link, headers={'User-Agent': 'Mozilla/5.0'})
+                    webpage = urlopen(req).read()
+                    soup = BeautifulSoup(webpage, 'html.parser')
+                    result = extract_player_info(soup)
+                    players.append(result)
+                    print(result)
+                except: 
+                    next
 
+        return players
+    
 
-    players = []
-    for link in players_links:
-        try:
-            new_link= URL_PLAYER_BASE + link
-            req = Request(new_link, headers={'User-Agent': 'Mozilla/5.0'})
-            webpage = urlopen(req).read()
-            soup = BeautifulSoup(webpage, 'html.parser')
-            result = extract_player_info(soup)
-            players.append(result)
-            print(result)
-        except: 
-            next
-
-
-    #Deuxième ajout de données
-    URL_PLAYER_BASE = 'https://int.soccerway.com'
-    URL_PLAYER_LISTE = 'https://int.soccerway.com/players/topscorers/'
-
-    req = Request('https://int.soccerway.com/players/transfers/', headers={'User-Agent': 'Mozilla/5.0'})
-    webpage = urlopen(req).read()
-    soup = BeautifulSoup(webpage, 'html.parser')
-
-    html = get_html_from_link(URL_PLAYER_LISTE)
-    players_links = get_links_to_players(soup)
-    players_links
-
-    for link in players_links:
-        try:
-            new_link= URL_PLAYER_BASE + link
-            req = Request(new_link, headers={'User-Agent': 'Mozilla/5.0'})
-            webpage = urlopen(req).read()
-            soup = BeautifulSoup(webpage, 'html.parser')
-            result = extract_player_info(soup)
-            players.append(result)
-            print(result)
-        except: 
-            next
-
-    players = list(set(players))
-    print(len(players))
-
-    df = pd.DataFrame(data=players, columns = ['Name', 'Club', 'Cost', 'Position', 'Goals', 'Minutes played', 'Matchs', 'Red Cards', 'ROI'])
-
-    df.describe()
+    df = pd.DataFrame(data=list(set(players)), columns = ['Name', 'Club', 'Cost', 'Position', 'Goals', 'Minutes played', 'Matchs', 'Red Cards', 'ROI'])
