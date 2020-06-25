@@ -12,5 +12,5 @@ class Application:
         return core.get_money_team_objects()
     
     def refresh(self):
-        scrap = Scrapping()
+        self.Players = Scrapping()
         print("Refreshed") 
