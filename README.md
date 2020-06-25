@@ -48,7 +48,6 @@ Check below the caracteristics that you can choose on the home page in order to 
 
 You will find on the desktop-hd screen a field with the 11 best players of the moment.
 
-## Contributing
 
 ### Install development environment
 
@@ -74,6 +73,16 @@ make tests
 Images and data come from a logistic football website. 
 
 >Link : https://fr.soccerway.com/
+
+## Built With
+
+[Visual Stucio Code](https://code.visualstudio.com/) - Html/css 
+[Python 3.8](https://www.python.org/) - Backend
+
+
+## Contributing
+
+Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Contributors
 
