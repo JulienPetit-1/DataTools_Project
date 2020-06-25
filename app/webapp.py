@@ -1,6 +1,6 @@
 # pylint: disable=invalid-name
 
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, send_from_directory
 from app.utils import Application
 
 app = Flask(__name__)
@@ -9,6 +9,10 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return render_template('home.html')
+
+@app.route('/statics/<path:path>')
+def send_statics(path):
+    return send_from_directory('statics', path)
 
 @app.route("/refresh")
 def refresh():
