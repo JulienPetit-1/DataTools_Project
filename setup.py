@@ -15,7 +15,8 @@ setup(
       'bs4',
       'honcho',
       'pandas',
-      'selenium'
+      'selenium',
+      'datetime'
     ],
     extras_require={
         'dev': [
