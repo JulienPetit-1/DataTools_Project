@@ -14,6 +14,6 @@ class Application:
         return core.build_team_by_roi( **parameters )
     
     def refresh(self):
-        self.Players = Scrapping(os.path.join(os.path.abspath(os.path.dirname(__file__)), "saves", "players.csv"))
-        self.Players.to_csv()
+        self.Players = Scrapping()
+        self.Players.to_csv(os.path.join(os.path.abspath(os.path.dirname(__file__)), "saves", "players.csv"))
         print("Refreshed") 
