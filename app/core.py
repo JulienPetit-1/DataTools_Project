@@ -37,12 +37,10 @@ class Core:
     def build_team_by_roi(self, budget = 100, count_limit = 2, gk = 2, df = 5, md = 5, atk = 3):
         money_team = []
         final_team = []
-        i = 0
         budget = budget
         injured = self.players_by_status('injuried')
         positions = {'Goalkeeper': gk, 'Defender': df, 'Midfielder': md, 'Attacker': atk}
         y = {'Goalkeeper': 410, 'Defender': 300, 'Midfielder': 50, 'Attacker': -190}
-        x = {'Goalkeeper': 410, 'Defender': 300, 'Midfielder': 50, 'Attacker': -190}
         teams = self.team_list()
         for player in self.points_top_players():
             
@@ -59,15 +57,21 @@ class Core:
                         budget -= player['Cost']
                         positions[player['Position']] = positions[player['Position']] - 1
                         teams[player['Club']] = teams[player['Club']] - 1
+        pos = None
+        i = 0
         for player in money_team:
-            i = i + 1
             player['ROI'] = round(float(player['ROI']), 2)
             player['y'] = y[player['Position']]
-            player['x'] = (600/len(money_team))*i*3 -400
+            if pos is not player['Position'] : 
+                i = 1
+                pos = player['Position']
+            else:
+                i = i + 1
+            row_team = sum(value['Position'] == pos for value in money_team)
+            player['x'] = (i/(row_team+1))* 600 - 300
             final_team.append(player)
 
         total_points = sum([item['Goals'] for item in money_team])
         print('Budget: ' + str(round(budget, 2)))
-        print('OnzeDeLegende picked the following team:')
         print('Points: ' + str(total_points))
         return final_team
