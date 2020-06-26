@@ -23,7 +23,7 @@ class Scrapping:
             :return: BeautifulSoup object (HTML parsed)
             :rtype: bs4.BeautifulSoup
         '''
-
+        
         req = Request(link, headers={'User-Agent': 'Mozilla/5.0'})
         webpage = urlopen(req).read()
         soup = BeautifulSoup(webpage, 'html.parser')
@@ -49,7 +49,7 @@ class Scrapping:
                 players_links = list(set(players_links))
         return players_links
 
-        def extract_player_info(player_html):
+    def extract_player_info(player_html):
         '''
             Extract players infos from URL PLAYER HTML
 
@@ -69,7 +69,7 @@ class Scrapping:
                 
             :rtype: tuple(string, string, string, string, string, string, string, string, string, string)
         '''
-    
+
         player_name = player_html.find('h1').text
         player_club = player_html.find('td', {"class":"team"}).text
         player_role = player_html.find('dd', {"data-position":"position"}).text

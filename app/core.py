@@ -34,34 +34,18 @@ class Core:
     def player_list(self):
         return self.Players.to_dict("records")
 
-    def get_money_team_objects(self, budget = 100, count_limit = 2, gk = 2, df = 5, md = 5, atk = 3):
-        money_team = []
-        budget = budget
-        injured = self.players_by_status('injuried')
-        positions = {'Goalkeeper': gk, 'Defender': df, 'Midfielder': md, 'Attacker': atk}
-        teams = self.team_list()
-        for player in self.points_top_players():
-            if len(money_team) < count_limit and player not in injured and budget >= player['Cost'] and positions[player['Position']] > 0 and teams[player['Club']] > 0:
-                money_team.append(player)
-                budget -= player['Cost']
-                positions[player['Position']] = positions[player['Position']] - 1
-                teams[player['Club']] = teams[player['Club']] - 1
-            else:
-                for player in self.roi_top_players():
-                    if player not in money_team and budget >= player['Cost'] and positions[player['Position']] > 0 and teams[player['Club']] > 0 :
-                        money_team.append(player)
-                        budget -= player['Cost']
-                        positions[player['Position']] = positions[player['Position']] - 1
-                        teams[player['Club']] = teams[player['Club']] - 1
-        return money_team
-
     def build_team_by_roi(self, budget = 100, count_limit = 2, gk = 2, df = 5, md = 5, atk = 3):
         money_team = []
+        final_team = []
+        i = 0
         budget = budget
         injured = self.players_by_status('injuried')
         positions = {'Goalkeeper': gk, 'Defender': df, 'Midfielder': md, 'Attacker': atk}
+        y = {'Goalkeeper': 410, 'Defender': 300, 'Midfielder': 50, 'Attacker': -190}
+        x = {'Goalkeeper': 410, 'Defender': 300, 'Midfielder': 50, 'Attacker': -190}
         teams = self.team_list()
         for player in self.points_top_players():
+            
             if len(money_team) < count_limit and player not in injured and budget >= player['Cost'] and positions[player['Position']] > 0 and teams[player['Club']] > 0:
                 money_team.append(player)
                 budget -= player['Cost']
@@ -69,22 +53,24 @@ class Core:
                 teams[player['Club']] = teams[player['Club']] - 1
             else:
                 for player in self.roi_top_players():
+
                     if player not in money_team and budget >= player['Cost'] and positions[player['Position']] > 0 and teams[player['Club']] > 0 :
                         money_team.append(player)
                         budget -= player['Cost']
                         positions[player['Position']] = positions[player['Position']] - 1
                         teams[player['Club']] = teams[player['Club']] - 1
-                        
-        final_team = [(item['Name'], item['Position'], item['Cost']) for item in money_team]
+        for player in money_team:
+            i = i + 1
+            player['ROI'] = round(float(player['ROI']), 2)
+            player['y'] = y[player['Position']]
+            player['x'] = (600/len(money_team)*i*3) -400
+            final_team.append(player)
+
         total_points = sum([item['Goals'] for item in money_team])
         print('Budget: ' + str(round(budget, 2)))
         print('OnzeDeLegende picked the following team:')
-        print('GK: '), print([(item[0], item[2]) for item in final_team if item[1] == "Goalkeeper"])
-        print('DF: '), print([(item[0], item[2]) for item in final_team if item[1] == "Defender"])
-        print('MD: '), print([(item[0], item[2])  for item in final_team if item[1] == "Midfielder"])
-        print('ATK: '), print([(item[0], item[2])  for item in final_team if item[1] == "Attacker"])
         print('Points: ' + str(total_points))
-        return money_team
+        return final_team
 
     def build_team_by_points(self, budget = 100, count_limit = 15, gk = 2, df = 5, md = 5, fwd = 3):
         points_team = []

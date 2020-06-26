@@ -1,7 +1,5 @@
 (function() {
-  var $closeBtn, $heading, $loadBtn, $loading, $players, $playersAway, $playersHome, $stage, $subHeading, $switchBtn, $switcher, $team, $teamListHome, $terrain, $world, ASSET_URL, anim, data, dom, events, init, pos, scenes, state;
-
-  ASSET_URL = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/';
+  var $closeBtn, $heading, $loadBtn, $loading, $players, $playersAway, $playersHome, $stage, $subHeading, $switchBtn, $switcher, $team, $teamListHome, $terrain, $world, anim, data, dom, events, init, pos, scenes, state;
 
   $stage = null;
 
@@ -35,252 +33,8 @@
 
   data = {
     players: {
-      home: [
-        {
-          name: 'Pizarro',
-          asset: 'bm-pizarro.jpg',
-          origin: 'Peru',
-          height: '1.84m',
-          shirt: '14',
-          pos: 'Forward',
-          dob: '36',
-          goals: 1,
-          games: 16,
-          x: 110,
-          y: -190
-        }, {
-          name: 'Robben',
-          asset: 'bm-robben.png',
-          origin: 'Holland',
-          height: '1.80m',
-          shirt: '10',
-          pos: 'Forward',
-          dob: '32',
-          goals: 19,
-          games: 30,
-          x: -110,
-          y: -190
-        }, {
-          name: 'Rilbery',
-          asset: 'bm-rilbery.jpg',
-          origin: 'France',
-          height: '1.70m',
-          shirt: '7',
-          pos: 'Midfield',
-          dob: '32',
-          goals: 9,
-          games: 22,
-          x: 150,
-          y: 50
-        }, {
-          name: 'Schweinsteiger',
-          asset: 'bm-schweinsteiger.jpg',
-          origin: 'Germany',
-          height: '1.87m',
-          shirt: '24',
-          pos: 'Forward',
-          dob: '31',
-          goals: 21,
-          games: 3,
-          x: 0,
-          y: 100
-        }, {
-          name: 'Martinez',
-          asset: 'bm-martinez.jpg',
-          origin: 'Spain',
-          height: '1.90m',
-          shirt: '8',
-          pos: 'Midfield',
-          dob: '28',
-          goals: 0,
-          games: 2,
-          x: -150,
-          y: 50
-        }, {
-          name: 'Alaba',
-          asset: 'bm-alaba.jpg',
-          origin: 'Austria',
-          height: '1.80m',
-          shirt: '27',
-          pos: 'Defence',
-          dob: '24',
-          goals: 5,
-          games: 27,
-          x: -200,
-          y: 180
-        }, {
-          name: 'Lahm',
-          asset: 'bm-lahm.jpg',
-          origin: 'Germany',
-          height: '1.70',
-          shirt: '21',
-          pos: 'Defence',
-          dob: '32',
-          goals: 2,
-          games: 25,
-          x: 200,
-          y: 180
-        }, {
-          name: 'Benatia',
-          asset: 'bm-benatia.jpg',
-          origin: 'France',
-          height: '1.87m',
-          shirt: '5',
-          pos: 'Defence',
-          dob: '31',
-          goals: 21,
-          games: 1,
-          x: 100,
-          y: 300
-        }, {
-          name: 'Dante',
-          asset: 'bm-dante.jpg',
-          origin: 'Brazil',
-          height: '1.87m',
-          shirt: '4',
-          pos: 'Defence',
-          dob: '32',
-          goals: 0,
-          games: 34,
-          x: -100,
-          y: 300
-        }, {
-          name: 'Neuer',
-          asset: 'bm-neuer.jpg',
-          origin: 'Germany',
-          height: '1.93m',
-          shirt: '1',
-          pos: 'Goalie',
-          dob: '29',
-          goals: 0,
-          games: 48,
-          x: 0,
-          y: 410
-        }
-      ],
-      away: [
-        {
-          name: 'Benzema',
-          asset: 'rm-benzema.jpg',
-          origin: 'France',
-          height: '1.87m',
-          shirt: '9',
-          pos: 'Forward',
-          dob: '36',
-          goals: 1,
-          games: 16,
-          x: 110,
-          y: -190
-        }, {
-          name: 'Bale',
-          asset: 'rm-bale.jpg',
-          origin: 'Wales',
-          height: '1.83m',
-          shirt: '11',
-          pos: 'Midfield',
-          dob: '26',
-          goals: 19,
-          games: 30,
-          x: -110,
-          y: -190
-        }, {
-          name: 'carvajal',
-          asset: 'rm-carvajal.jpg',
-          origin: 'Spain',
-          height: '1.70m',
-          shirt: '15',
-          pos: 'Defender',
-          dob: '32',
-          goals: 9,
-          games: 22,
-          x: 150,
-          y: 50
-        }, {
-          name: 'Silva',
-          asset: 'rm-silva.jpg',
-          origin: 'Brazil',
-          height: '1.87m',
-          shirt: '16',
-          pos: 'Forward',
-          dob: '22',
-          goals: 21,
-          games: 3,
-          x: 0,
-          y: 100
-        }, {
-          name: 'Kroos',
-          asset: 'rm-kroos.jpg',
-          origin: 'Germany',
-          height: '1.82',
-          shirt: '8',
-          pos: 'Midfield',
-          dob: '25',
-          goals: 0,
-          games: 2,
-          x: -150,
-          y: 50
-        }, {
-          name: 'Modric',
-          asset: 'rm-modric.jpg',
-          origin: 'Croatia',
-          height: '1.74m',
-          shirt: '19',
-          pos: 'Midfield',
-          dob: '30',
-          goals: 5,
-          games: 27,
-          x: -200,
-          y: 180
-        }, {
-          name: 'Nacho',
-          asset: 'rm-nacho.jpg',
-          origin: 'Germany',
-          height: '1.79',
-          shirt: '18',
-          pos: 'Defence',
-          dob: '25',
-          goals: 2,
-          games: 25,
-          x: 200,
-          y: 180
-        }, {
-          name: 'Ramos',
-          asset: 'rm-ramos.jpg',
-          origin: 'Spain',
-          height: '1.83m',
-          shirt: '4',
-          pos: 'Defence',
-          dob: '31',
-          goals: 21,
-          games: 1,
-          x: 100,
-          y: 300
-        }, {
-          name: 'Pepe',
-          asset: 'rm-pepe.jpg',
-          origin: 'Brazil',
-          height: '1.88m',
-          shirt: '3',
-          pos: 'Defence',
-          dob: '32',
-          goals: 0,
-          games: 34,
-          x: -100,
-          y: 300
-        }, {
-          name: 'Casillas',
-          asset: 'rm-casillas.jpg',
-          origin: 'Spain',
-          height: '1.85m',
-          shirt: '1',
-          pos: 'Goalie',
-          dob: '34',
-          goals: 0,
-          games: 48,
-          x: 0,
-          y: 410
-        }
-      ]
+      home: window.data,
+      away: window.data
     }
   };
 
@@ -330,9 +84,9 @@
     },
     addPlayer: function(data) {
       var $el;
-      $el = $('<div class="js-player player" data-name="' + data.name + '" data-side="' + data.side + '" data-x="' + data.x + '" data-y="' + data.y + '"></div>');
-      $el.append('<div class="player__label"><span>' + data.name + '</span></div>');
-      $el.append('<div class="player__img"><img src= ' + ASSET_URL + data.asset + '></div>');
+      $el = $('<div class="js-player player" data-name="' + data.Name + '" data-side="' + data.side + '" data-x="' + data.x + '" data-y="' + data.y + '"></div>');
+      $el.append('<div class="player__label"><span>' + data.Name + '</span></div>');
+      $el.append('<div class="player__img"><img src= ' + data.Asset + '></div>');
       $el.prepend('<div class="player__card"> </div>');
       $el.prepend('<div class="player__placeholder"></div>');
       this.populateCard($el.find('.player__card'), data);
@@ -359,7 +113,7 @@
       });
     },
     populateCard: function($el, data) {
-      return $el.append('<h3>' + data.name + '</h3>' + '<ul class="player__card__list"><li><span>DOB</span><br/>' + data.dob + ' yr</li><li><span>Height</span><br/>' + data.height + '</li><li><span>Origin</span><br/>' + data.origin + '</li></ul>' + '<ul class="player__card__list player__card__list--last"><li><span>Games</span><br/>' + data.games + '</li><li><span>Goals</span><br/>' + data.goals + '</li></ul>');
+      return $el.append('<h3>' + data.Name + '</h3>' + '<ul class="player__card__list"><li><span>Cost</span><br/>' + data.Cost + 'M€</li><li><span>ROI</span><br/>' + data.ROI + '</li><li><span>Status</span><br/>' + data.Status + '</li></ul>' + '<ul class="player__card__list player__card__list--last"><li><span>Games</span><br/>' + data.Matchs + '</li><li><span>Goals</span><br/>' + data.Goals + '</li></ul>');
     },
     displayNone: function($el) {
       return $el.css('display', 'none');
@@ -464,7 +218,7 @@
       _ref = data.players.home && data.players.away;
       for (key in _ref) {
         val = _ref[key];
-        images.push(ASSET_URL + val.asset);
+        images.push(val.Asset);
       }
       return dom.preloadImages(images);
     },

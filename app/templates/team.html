@@ -2,6 +2,11 @@
 <head>
     <title>Team</title>
     <link rel="stylesheet" href="/statics/style.css">
+    <script>
+        {% autoescape false %}
+        window.data = JSON.parse('{{ result|tojson }}');
+        {% endautoescape %}
+    </script>
 </head>
 <body>
     <main>
