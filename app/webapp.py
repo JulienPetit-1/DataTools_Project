@@ -2,6 +2,7 @@
 
 from flask import Flask, request, render_template, send_from_directory
 from app.utils import Application
+import threading
 
 app = Flask(__name__)
 
@@ -17,7 +18,8 @@ def send_statics(path):
 @app.route("/refresh")
 def refresh():
     app = Application()
-    app.refresh()
+    print("Thread refreshed started ...")
+    threading.Thread(target=app.refresh, args=())
     return render_template('refresh.html')
 
 @app.route("/team", methods=['POST'])

@@ -77,7 +77,7 @@ class Scrapping:
         try:
             player_cost = float(player_html.find('td', {"class":"type"}).text[1:].replace("€","").replace("M",""))
         except:
-            player_cost = np.nan
+            player_cost = 0
             
         player_goals = int(player_html.find('td', {"class":"number statistic goals available"}).text)
         player_time = int(player_html.find('td', {"class":"number statistic game-minutes available"}).text)
@@ -135,6 +135,6 @@ class Scrapping:
 
         return players
     
-    def __init__(self):
+    def run(self):
         players = self.add_players_list()
         return pd.DataFrame(data=list(set(players)), columns = ['Name', 'Club', 'Cost', 'Position', 'Goals', 'Minutes_played', 'Matchs', 'Red_Cards', 'Status', 'ROI', 'Asset'])

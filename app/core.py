@@ -17,16 +17,17 @@ class Core:
         return self.Players.sort_values(by=['ROI'], ascending=False).to_dict("records")
 
     def roi_bottom_players(self):
-         '''
+        '''
 	        Sorted the player list by ROI from the bottom
             
 	        :return: List of all players sorted by ROI ascending
 	        :rtype: list(dict) 
         '''
+
         return self.Players.sort_values(by=['ROI'], ascending=True).to_dict("records")
 
     def average__player_roi(self):
-         '''
+        '''
 	        Sorted the player list by ROI's mean
             
             :return: List of all players sorted by ROI's mean
@@ -35,7 +36,6 @@ class Core:
         return round(float(self.Players['ROI'].mean(), 2)).to_dict("records")
 
     def points_top_players(self):
-
         '''
             Sorted the player list by goals
                     
