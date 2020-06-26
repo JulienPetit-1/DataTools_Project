@@ -10,8 +10,10 @@ class Application:
 
     def team(self, parameters):
         core = Core(self.Players)
-        return core.build_team_by_roi()
+        parameters = [dict([key, int(value)] for key, value in parameters.items())][0]
+        return core.build_team_by_roi( **parameters )
     
     def refresh(self):
-        self.Players = Scrapping()
+        self.Players = Scrapping(os.path.join(os.path.abspath(os.path.dirname(__file__)), "saves", "players.csv"))
+        self.Players.to_csv()
         print("Refreshed") 

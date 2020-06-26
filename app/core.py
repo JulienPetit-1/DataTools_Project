@@ -63,7 +63,7 @@ class Core:
             i = i + 1
             player['ROI'] = round(float(player['ROI']), 2)
             player['y'] = y[player['Position']]
-            player['x'] = (600/len(money_team)*i*3) -400
+            player['x'] = (600/len(money_team))*i*3 -400
             final_team.append(player)
 
         total_points = sum([item['Goals'] for item in money_team])
@@ -71,24 +71,3 @@ class Core:
         print('OnzeDeLegende picked the following team:')
         print('Points: ' + str(total_points))
         return final_team
-
-    def build_team_by_points(self, budget = 100, count_limit = 15, gk = 2, df = 5, md = 5, fwd = 3):
-        points_team = []
-        budget = budget
-        injured = self.players_by_status('injuried')
-        positions = {'Goalkeeper': gk, 'Defender': df, 'Midfielder': md, 'Attacker': atk}
-        for player in self.points_top_players():
-            if len(points_team) < count_limit and player not in injured and budget >= player['Cost'] and positions[player['Position']] > 0:
-                points_team.append(player)
-                budget -= player['Cost']
-                positions[player['Position']] = positions[player['Position']] - 1
-        final_team = [(item['Name'], item['Position'], item['Cost']) for item in points_team]
-        total_points = sum([item['Goals']for item in points_team])
-        print('Remaining Budget: ' + str(round(budget, 2)))
-        print('AVG Joe has picked the following team:')
-        print('GK: '), print([(item[0], item[2]) for item in final_team if item[1] == "Goalkeeper"])
-        print('DF: '), print([(item[0], item[2]) for item in final_team if item[1] == "Defender"])
-        print('MD: '), print([(item[0], item[2])  for item in final_team if item[1] == "Midfielder"])
-        print('ATK: '), print([(item[0], item[2])  for item in final_team if item[1] == "Attacker"])
-        print('Points: ' + str(total_points))
-        return points_team

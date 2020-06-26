@@ -11,7 +11,7 @@ class Scrapping:
 
     links_scrap = [ 'https://int.soccerway.com/players/topscorers/', 'https://int.soccerway.com/players/transfers/']
 
-    def get_html_from_page(link):
+    def get_html_from_page(self, link):
 
         '''
             Extract html code from a choosen web site
@@ -31,7 +31,7 @@ class Scrapping:
         return soup
     
 
-    def get_links_to_players(root_html):
+    def get_links_to_players(self, root_html):
         '''
             Extract players links from URL_PLAYER_LISTE
             
@@ -49,7 +49,7 @@ class Scrapping:
                 players_links = list(set(players_links))
         return players_links
 
-    def extract_player_info(player_html):
+    def extract_player_info(self, player_html):
         '''
             Extract players infos from URL PLAYER HTML
 
@@ -109,7 +109,7 @@ class Scrapping:
         return player_name, player_club, player_cost, player_role, player_goals, player_time, player_match, player_red_cards, player_status, player_ROI, player_image
 
 
-    def add_players_list():
+    def add_players_list(self):
         '''
             Add players infos to a list
 
@@ -120,14 +120,14 @@ class Scrapping:
     
         players = []
         
-        for i in links_scrap:
-            soup = get_html_from_page(i)
-            links = get_links_to_players(soup)
+        for i in self.links_scrap:
+            soup = self.get_html_from_page(i)
+            links = self.get_links_to_players(soup)
             for link in links:
                 try:
                     new_link= 'https://int.soccerway.com' + link
-                    soup_player = get_html_from_page(new_link)
-                    result = extract_player_info(soup_player)
+                    soup_player = self.get_html_from_page(new_link)
+                    result = self.extract_player_info(soup_player)
                     players.append(result)
                     print(result)
                 except: 
@@ -137,4 +137,4 @@ class Scrapping:
     
     def __init__(self):
         players = self.add_players_list()
-        return pd.DataFrame(data=list(set(players)), columns = ['Name', 'Club', 'Cost', 'Position', 'Goals', 'Minutes played', 'Matchs', 'Red Cards', 'Status', 'ROI', 'Image Link'])
+        return pd.DataFrame(data=list(set(players)), columns = ['Name', 'Club', 'Cost', 'Position', 'Goals', 'Minutes_played', 'Matchs', 'Red_Cards', 'Status', 'ROI', 'Asset'])
